@@ -9,6 +9,7 @@ bool isPrime(int n)
         return false;
     }
 
+    // using property that for sqrt(N) where N = a*b, a or b will be smaller that sqrt(n)
     for (int i = 2; i * i <= n; i++)
     {
 
@@ -16,19 +17,26 @@ bool isPrime(int n)
         {
             return false;
         }
-        }
+    }
     return true;
 }
 
 int main()
 {
 
-    int n;
-    cout << "Enter number: ";
-    cin >> n;
-
-    if (isPrime(n))
+    int n, t;
+    cin >> t;
+    while (t--)
     {
-        cout << "It is Prime" << endl;
+
+        cin >> n;
+        if (isPrime(n))
+        {
+            cout << "yes" << endl;
+        }
+        else
+        {
+            cout << "no" << endl;
+        }
     }
 }
