@@ -7,7 +7,7 @@ class CircularQ{
 	int front;
 	int rear;
 	int size;
-	int count =0;
+	int count = 0;
 	
 	public:
 		

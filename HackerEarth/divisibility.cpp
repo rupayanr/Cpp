@@ -47,7 +47,6 @@ int main(){
 		}
 	}
 	
-
 	
 	if(abs(even - odd)% 11 == 0){
 		cout << "OUI";

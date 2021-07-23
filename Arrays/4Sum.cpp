@@ -67,7 +67,6 @@ vector<vector<int>> fourSum(int target, vector<int> &nums){
 		while(i+1 < n && nums[i+1] == nums[i]) ++i;
 	}
 	
-	display(final);
 	
 	return final;
 	

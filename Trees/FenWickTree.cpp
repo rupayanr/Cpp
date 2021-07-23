@@ -70,6 +70,11 @@ class FenWickTree{
 		}
 	}
 	
+	void replace(int bit[], int arr[],int index, int len, int val ){
+		val -= arr[index]; 
+		update(bit,index,len,val);		
+	}
+	
 	void delTree(int* &bit){
 		delete[] bit;
 		
@@ -92,17 +97,22 @@ class FenWickTree{
 		int sum2 = get_sum(bit,stop);
 		return sum2 - sum1;
 	}
+ 
 	
 };
 
 
 int main(){
-	int freq[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9};
+ /*	int freq[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9};
     int n = sizeof(freq)/sizeof(freq[0]);
     
     FenWickTree tree;
     int* bit = tree.create(freq, n);
     int res = tree.get_sum(bit,5);
     cout << res;
+   */ 
+    int arr[] = {8,4,9,2};
+    int inv_count = tree.countInv(arr,4);
+    cout << inv_count;
 	
 }
