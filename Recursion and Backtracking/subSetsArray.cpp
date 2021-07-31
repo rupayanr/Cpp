@@ -3,9 +3,33 @@
 #define vi vector<int> 
 #define pb push_back
 using namespace std;
-
+// Try bit manipulation method 
 
 vvi result;
+
+vvi getSubsets(vi &nums){
+	
+	vvi subsets = {{}};
+	
+	for(int num: nums){
+		int n = subsets.size();
+		cout << "Size: "<<n<<endl;
+		
+		for(int i=0; i<n; i++){
+			subsets.pb(subsets[i]);
+			subsets.back().pb(num);
+		}
+	}
+	
+	for(auto vec: subsets){
+		for(auto el: vec){
+			cout << el <<"";
+		}
+		cout << endl;
+	}
+	
+	return subsets;
+}
 
 void getSubArrays(vi nums, int i, vi &subset){
 	
@@ -14,6 +38,13 @@ void getSubArrays(vi nums, int i, vi &subset){
 	
 	// Base Case 
 	if(i == nums.size()){
+		
+		cout << "Subset{}: ";
+		for(auto el:subset){
+			cout << el << " ";
+			
+		}
+		cout << endl;
 		result.pb(subset);
 		return;
 	}
@@ -49,4 +80,7 @@ int main(){
 		}
 		cout << endl;
 	}
+	
+	vvi ans = getSubsets(nums);
+
 }

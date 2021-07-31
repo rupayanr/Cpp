@@ -11,11 +11,7 @@ void display(vector<int> vec){
 
 
 int gcd_euclid(int a, int b){ // 10, 20 
-	if(a > b){
-		int temp = b;
-		b = a;
-		a = temp;
-	}
+
 	
 	int rem = 1;
 	while(rem != 0){
@@ -57,6 +53,7 @@ int gcd(int a, int b){
 int main(){
 	
 		//gcd(1050,3580);
-		
-		gcd_euclid(1050,3580);
+		int n, m;
+		cin >> n >> m;
+		gcd_euclid(n,m);
 }
