@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void search2D(vvi &a, int target){
+bool search2D(vvi &a, int target){
 	
 	/* 
 	
@@ -44,11 +44,12 @@ void search2D(vvi &a, int target){
 		else{
 			cout << i << endl;
 			cout << j << endl;
-			break;
+			return true;
 		}
 	}
 	
-	cout << "Not Found"<<endl;
+	return false;
+	
 	
 	
 	
@@ -69,5 +70,9 @@ int main(){
 	}
 	int x;
 	cin >> x;
-	search2D(a,x);
+	if(!search2D(a,x)){
+		cout << "Not Found"<<endl;
+	}
+	
+	
 }
