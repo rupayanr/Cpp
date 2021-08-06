@@ -45,7 +45,7 @@ void primeFactors(int n){
 		if(n % i == 0){		//9%3 == 0
 			int count = 0;
 			while(n % i == 0){  
-				n = n/i;    // n = 9/2 = 4
+				n = n/i;    // n = 9/3 = 3
 				count++;
 			}
 			pFact = make_pair(i,count);
