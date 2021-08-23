@@ -17,19 +17,13 @@ using namespace std;
 int giveCombinations(vector<int> &coins, int &pay){
 	
 	int dp[pay + 1] = {0};
-	
-	
-	
 	dp[0] = 1;
 	
 	for(int coin : coins){
 	
 		for(int j=coin; j<=pay; j++){ // 2
-			dp[j] += dp[j - coin]; 
-		
+			dp[j] += dp[j - coin]; 		
 		}
-	
-		
 	}
 	
 	return dp[pay];
