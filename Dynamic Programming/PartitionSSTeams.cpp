@@ -12,9 +12,9 @@ using namespace std;
 			 / \
 			/   \
 		12[2]	12[1] 
-		[1 - 2] [12] 
+	1) [1 - 2]  2) [12] 
 		
-		1)       2)
+		
 	
 	1) Scenario is that 3 asks 12 to make 2 teams [1 - 2] and 3 says I can join any one of them so total -> 2*1 combination 
 	2) Scenario is that 3 asks 12 to make 1 team and it becomes the other team [12] [12 - 3] so total 1 Combination
@@ -31,8 +31,7 @@ using namespace std;
 
 */
 
-
-void getTeams(int n, int k){
+int getTeams(int n, int k){
 	
 	// Make a Dp of n+1 * k+1 
 	vvi dp(n+1, vi (k+1, 0));
@@ -47,7 +46,6 @@ void getTeams(int n, int k){
 			}
 			else if(i == j){
 				dp[i][j] = 1;
-				
 			}
 			else if(j < i){
 				dp[i][j] = 0;
@@ -59,8 +57,8 @@ void getTeams(int n, int k){
 			}
 		}
 	}
-	
-	cout << dp[k][n] << endl;
+
+	return dp[k][n];
 	
 }
 
@@ -68,7 +66,8 @@ void getTeams(int n, int k){
 int main(){
 int n,k; 
 cin >> n >> k;
-getTeams(n,k);	
+int ans = getTeams(n,k);	
+cout << ans << endl;
 return 0;
 }
 
