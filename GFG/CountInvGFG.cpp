@@ -21,7 +21,7 @@ class Solution{
         long long a2[l2];
         
         //Storing elements present in left half in the array a1.
-        for(long long i = 0;i<l;i++){
+        for(long long i = 0; i<l ;i++){
             a1[i] = a[i+p];
         }
         //Storing elements present in right half in the array a2.
@@ -68,18 +68,27 @@ class Solution{
     //on left and right halves of array for mergesort operation.
     void mergeSort(long long a[], long long p, long long r)
     {
+ 		cout << "lo: " << p << endl;
+ 		cout << "hi: " << r << endl;
+ 		
         if(p < r)
         {
             long long q = (p+r)/2;
             //Calling recursive function to sort left half of the array.
             mergeSort(a, p, q);
-            
+           
             //Calling recursive function to sort right half of the array.
             mergeSort(a, q+1, r);
-            
+          
             //Calling merge function which sorts and merges both halves
             //of the array obtained after calling both recursive function.
             merge(a, p, q, r);
+            
+            for(int i = p; i<=r; i++){
+            	cout << a[i] << " ";
+			}
+			cout << endl;
+           
         }
     }
     
